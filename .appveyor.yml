@@ -5,17 +5,17 @@ environment:
     libjpeg_files: "http://ijg.org/files/"
   matrix:
   - configuration: release
-  - configuration: debug
+  # configuration: debug
   
 platform:
   - x86
-  - amd64
+  # amd64
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
-  Get libpng source 
+  # Get libjpeg source 
   appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
   7z x jpegsr%libjpeg_version%.zip
   dir
