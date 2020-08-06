@@ -31,10 +31,12 @@ build_script:
   - ps: (Get-Content makefile.vs) -replace '#!include <win32.mak>', '!include <win32.mak>' | Out-File -encoding ASCII makefile.vs
   - nmake -f makefile.vs setup-v16
   - nmake -f makefile.vs 
-  # cd ..
-  # mkdir d
-  # mkdir d\include
-  # mkdir d\lib
+  - dir
+  - cd ..
+  - mkdir d
+  - mkdir d\include
+  - mkdir d\lib
+  - mkdir d\bin
   # copy lpng1634\scripts\pnglibconf.h.prebuilt  d\include\pnglibconf.h
   # copy lpng1634\png.h d\include
   # copy lpng1634\pngconf.h d\include
