@@ -8,15 +8,17 @@ environment:
   # configuration: debug
   
 platform:
-  - x86
-  # amd64
+  #- x86
+  - amd64
 
 init:
   - '%VisualStudio%\vcvarsall.bat %platform%'
 
 install:
   # Get libjpeg source 
+  dir
   appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
+  dir
   7z x jpegsr%libjpeg_version%.zip
   dir
   # mkdir zlib
