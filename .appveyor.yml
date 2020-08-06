@@ -37,8 +37,8 @@ build_script:
   - mkdir d\include
   - mkdir d\lib
   - mkdir d\bin
-  # copy lpng1634\scripts\pnglibconf.h.prebuilt  d\include\pnglibconf.h
-  # copy lpng1634\png.h d\include
+  - copy jpeg-%libjpeg_version%\*.exe d\bin
+  - copy jpeg-%libjpeg_version%\*.lib d\lib
   # copy lpng1634\pngconf.h d\include
   # copy lpng1634\pnginfo.h d\include
   # copy lpng1634\libpng.lib d\lib
