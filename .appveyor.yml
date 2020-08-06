@@ -16,11 +16,9 @@ init:
 
 install:
   # Get libjpeg source 
-  dir
-  appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
-  dir
-  7z x jpegsr%libjpeg_version%.zip
-  dir
+  - appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
+  - 7z x jpegsr%libjpeg_version%.zip
+  - dir
   # mkdir zlib
   # cd zlib
   #- appveyor DownloadFile https://github.com/maxirmx/Dist_zlib/releases/latest/download/zlib-%platform%-%configuration%.zip
