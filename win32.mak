@@ -1,2 +1,2 @@
-cc=cl.exe
-CFLAGS=-c
+cc     = cl.exe
+cflags = -c
