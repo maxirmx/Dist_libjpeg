@@ -27,7 +27,8 @@ install:
 build_script:                                                                                   
   # Build
   - cd jpeg-%libjpeg_version%
-  - dir
+  - ps: (Get-Content makefile.vs) -replace '#!include <win32.mak>', '!include <win32.mak>' | Out-File -encoding ASCII makefile.vs
+  - type makefile.vs
   # nmake -f scripts/makefile.vcwin32
   - nmake -f makefile.vs setup-v16
   - nmake -f makefile.vs 
