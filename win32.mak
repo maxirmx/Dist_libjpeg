@@ -1,1 +1,1 @@
-CC=cl.exe
+cc=cl.exe
