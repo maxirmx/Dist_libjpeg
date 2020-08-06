@@ -18,7 +18,6 @@ install:
   # Get libjpeg source 
   - appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
   - 7z x jpegsr%libjpeg_version%.zip
-  - dir
   # mkdir zlib
   # cd zlib
   #- appveyor DownloadFile https://github.com/maxirmx/Dist_zlib/releases/latest/download/zlib-%platform%-%configuration%.zip
@@ -27,9 +26,10 @@ install:
    
 build_script:                                                                                   
   # Build
-  # cd lpng1634   
+  - cd jpeg-%libjpeg_version%
+  - dir
   # nmake -f scripts/makefile.vcwin32
-  nmake -f makefile.vs setup-v16
+  - nmake -f makefile.vs setup-v16
   # cd ..
   # mkdir d
   # mkdir d\include
