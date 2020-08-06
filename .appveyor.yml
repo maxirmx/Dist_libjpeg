@@ -29,7 +29,8 @@ build_script:
   - cd jpeg-%libjpeg_version%
   - dir
   # nmake -f scripts/makefile.vcwin32
-  - nmake -f makefile.vs setup-v16
+  - nmake -f makefile.vs 
+  # setup-v16
   # cd ..
   # mkdir d
   # mkdir d\include
