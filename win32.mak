@@ -1,6 +1,6 @@
 cc     = cl.exe
 link   = link.exe
-!IFDEF $(CFG)
+!IFDEF CFG
 !IF $(CFG)=="release"
  cflags = -nologo -c -MD -W3 -O2 -Oy- -Fd"libjpeg" -D_CRT_SECURE_NO_DEPRECATE 
 !ELSE
