@@ -5,7 +5,7 @@ environment:
     libjpeg_files: "http://ijg.org/files/"
   matrix:
   - configuration: release
-  # configuration: debug
+  - configuration: debug
   
 platform:
   #- x86
@@ -24,8 +24,8 @@ build_script:
   # Build
   - cd jpeg-%libjpeg_version%
   - ps: (Get-Content makefile.vs) -replace '#!include <win32.mak>', '!include <win32.mak>' | Out-File -encoding ASCII makefile.vs
-  - nmake -f makefile.vs setup-v16
-  - nmake -f makefile.vs 
+  - nmake -f makefile.vs CFG=%configuration% setup-v16 
+  - nmake -f makefile.vs CFG=%configuration%
   - dir
   - cd ..
   - mkdir d
