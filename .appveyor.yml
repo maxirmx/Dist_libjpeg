@@ -34,25 +34,23 @@ build_script:
   - mkdir d\bin
   - copy jpeg-%libjpeg_version%\*.exe d\bin
   - copy jpeg-%libjpeg_version%\*.lib d\lib
-  # copy lpng1634\pngconf.h d\include
-  # copy lpng1634\pnginfo.h d\include
-  # copy lpng1634\libpng.lib d\lib
-  # cd d
-  # 7z a -tzip -r -y ..\libpng-%platform%-%configuration%.zip *.*
+  - copy jpeg-%libjpeg_version%\j*.h d\include
+  - cd d
+  - 7z a -tzip -r -y ..\libjpeg-%platform%-%configuration%.zip *.*
    
 test: off
 
 artifacts:
-   #- path: libpng-%platform%-%configuration%.zip
+   - path: libjpeg-%platform%-%configuration%.zip
    
 deploy:
-# provider: GitHub
-#  release: $(appveyor_build_version)
-#  description: 'libpng build [$(appveyor_build_version)]'
-#  auth_token:
-#    secure: 7fz/vsEpOOUyPYNmrykrY4lgqu3XQsag6g4x25nOwtd2dM2kc3X3GPoPzMCMDno/
-#  draft: false
-#  prerelease: false
-#  on:
-#    branch: master                 # release from master branch only
-#    APPVEYOR_REPO_TAG: false       # deploy on tag push only
+ provider: GitHub
+  release: $(appveyor_build_version)
+  description: 'libjpeg build [$(appveyor_build_version)]'
+  auth_token:
+    secure: 7fz/vsEpOOUyPYNmrykrY4lgqu3XQsag6g4x25nOwtd2dM2kc3X3GPoPzMCMDno/
+  draft: false
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    APPVEYOR_REPO_TAG: false       # deploy on tag push only
