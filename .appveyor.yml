@@ -44,13 +44,15 @@ artifacts:
    - path: libjpeg-%platform%-%configuration%.zip
    
 deploy:
- provider: GitHub
-  release: $(appveyor_build_version)
-  description: 'libjpeg build [$(appveyor_build_version)]'
+- provider: GitHub
+# I am tagging through github
+# Tag format is v<major version>.<minor version>, shall be consistent with major.monir of Appveyor build
+# release: v$(appveyor_build_version)
+  description: 'libjpeg appveyor build script v$(appveyor_build_version) with binaries'
   auth_token:
     secure: 7fz/vsEpOOUyPYNmrykrY4lgqu3XQsag6g4x25nOwtd2dM2kc3X3GPoPzMCMDno/
   draft: false
   prerelease: false
   on:
     branch: master                 # release from master branch only
-    APPVEYOR_REPO_TAG: false       # deploy on tag push only
+    APPVEYOR_REPO_TAG: true        # deploy on tag push only
