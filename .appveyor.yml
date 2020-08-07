@@ -19,11 +19,6 @@ install:
   - appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
   - 7z x jpegsr%libjpeg_version%.zip
   - move win32.mak jpeg-%libjpeg_version%
-  # mkdir zlib
-  # cd zlib
-  #- appveyor DownloadFile https://github.com/maxirmx/Dist_zlib/releases/latest/download/zlib-%platform%-%configuration%.zip
-  #- 7z e -tzip zlib-%platform%-%configuration%.zip
-  # cd ..
    
 build_script:                                                                                   
   # Build
