@@ -1,9 +1,13 @@
 cc     = cl.exe
 link   = link.exe
+cflags = -nologo -c -MD -W3 -O2 -Oy- -Fd"libjpeg" -D_CRT_SECURE_NO_DEPRECATE 
+conlflags = -nologo -incremental:no -opt:ref
 !IFDEF CFG
 !IF "$(CFG)" =="release"
-cflags = -nologo -c -MD -W3 -O2 -Oy- -Fd"libjpeg" -D_CRT_SECURE_NO_DEPRECATE 
+cdebug = 
+ldebug = 
 !ELSE
-cflags = -nologo -c -MDd -W3 -O2 -Oy- -Zi -Fd"libjpeg" -D_CRT_SECURE_NO_DEPRECATE 
+cdebug = -Zi 
+ldebug = -debug 
 !ENDIF
 !ENDIF
