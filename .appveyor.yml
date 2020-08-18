@@ -27,6 +27,8 @@ build_script:
   - nmake -f makefile.vs CFG=%configuration% setup-v16 
   - nmake -f makefile.vs CFG=%configuration%
   - cd ..
+
+after_build:
   - mkdir d
   - mkdir d\include
   - mkdir d\lib
