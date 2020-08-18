@@ -1,4 +1,4 @@
 # Do not track build artifacts
-libjpeg-*\*.*
+libjpeg-9d/
 libjpeg.zip
 
