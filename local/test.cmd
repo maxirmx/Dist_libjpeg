@@ -20,6 +20,6 @@ powershell -ExecutionPolicy Bypass Invoke-WebRequest -Uri %Libjpeg_files%/jpegsr
 
 cmd /c build.cmd %1 %libjpeg_version%
 
-cd local
+cd cd %~dp0
 
 
