@@ -22,19 +22,15 @@ install:
    
 build_script:                                                                                   
   # Build
-  - cd jpeg-%libjpeg_version%
-  - ps: (Get-Content makefile.vs) -replace '#!include <win32.mak>', '!include <win32.mak>' | Out-File -encoding ASCII makefile.vs
-  - nmake -f makefile.vs CFG=%configuration% setup-v16 
-  - nmake -f makefile.vs CFG=%configuration%
-  - cd ..
+  - build.cmd %configuration% %libjpeg_version%
 
 after_build:
   - mkdir d
   - mkdir d\include
   - mkdir d\lib
   - mkdir d\bin
-  - copy jpeg-%libjpeg_version%\*.exe d\bin
   - copy jpeg-%libjpeg_version%\*.lib d\lib
+  - copy jpeg-%libjpeg_version%\*.pdb d\lib
   - copy jpeg-%libjpeg_version%\j*.h d\include
   - cd d
   - 7z a -tzip -r -y ..\libjpeg-%platform%-%configuration%.zip *.*
