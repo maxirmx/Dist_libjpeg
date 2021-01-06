@@ -7,8 +7,8 @@ rem --------------------------------------------------------------------
 
 cd ..
 
-SET libjpeg_version="9d"
-SET libjpeg_files="http://ijg.org/files"
+SET libjpeg_version=9d
+SET libjpeg_files=http://ijg.org/files
 
 @echo on
 
@@ -20,6 +20,6 @@ powershell -ExecutionPolicy Bypass Invoke-WebRequest -Uri %Libjpeg_files%/jpegsr
 
 cmd /c build.cmd %1 %libjpeg_version%
 
-cd cd %~dp0
+cd %~dp0
 
 
