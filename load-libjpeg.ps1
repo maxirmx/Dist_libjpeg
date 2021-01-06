@@ -7,6 +7,8 @@ $fname1 = "jpeg-" + $version
 $fname2 = "libjpeg.zip"
 $uri    =  "http://ijg.org/files/$fname" 
 
+"Loading from $uri to $fname2"
+
 Invoke-WebRequest -Uri $uri -OutFile $fname2 
 
 

@@ -12,7 +12,7 @@ rem --------------------------------------------------------------------
 
 cd ..
 
-IF NOT EXIST podofo    (powershell -ExecutionPolicy Bypass %~dp0..\load-libjpeg.ps1) 
+IF NOT EXIST libjpeg  (powershell -ExecutionPolicy Bypass %~dp0..\load-libjpeg.ps1) 
 powershell -ExecutionPolicy Bypass .\build-libjpeg.ps1 %1 %2 -configure
 
 cd %~dp0
