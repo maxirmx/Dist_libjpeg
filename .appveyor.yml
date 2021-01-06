@@ -16,7 +16,7 @@ init:
 
 install:
   # Get libjpeg source 
-  - ps: ./load-libjpeg.ps1 %libjpeg_version%
+  - ps: ./load-libjpeg.ps1 $env:libjpeg_version
    
 build_script:                                                                                   
   # Build
