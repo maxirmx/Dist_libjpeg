@@ -16,12 +16,11 @@ init:
 
 install:
   # Get libjpeg source 
-  - appveyor DownloadFile %Libjpeg_files%/jpegsr%libjpeg_version%.zip
-  - 7z x jpegsr%libjpeg_version%.zip
+  - ps: ./load-libjpeg.ps1 %libjpeg_version%
    
 build_script:                                                                                   
   # Build
-  - build.cmd %configuration% %libjpeg_version%
+  - ps: ./build-libjpeg.ps1 $env:platform $env:configuration
 
 after_build:
   - mkdir d
