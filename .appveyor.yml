@@ -27,9 +27,9 @@ after_build:
   - mkdir d\include
   - mkdir d\lib
   - mkdir d\bin
-  - copy jpeg-%libjpeg_version%\*.lib d\lib
-  - copy jpeg-%libjpeg_version%\*.pdb d\lib
-  - copy jpeg-%libjpeg_version%\j*.h d\include
+  - copy libjpeg\*.lib d\lib
+  - copy libjpeg\*.pdb d\lib
+  - copy libjpeg\j*.h d\include
   - cd d
   - 7z a -tzip -r -y ..\libjpeg-%platform%-%configuration%.zip *.*
    
