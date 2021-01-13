@@ -2,7 +2,6 @@ environment:
   global:
     VisualStudio:     '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
     libjpeg_version:  "9d"
-    libjpeg_files: "http://ijg.org/files/"
   matrix:
   - configuration: release
   - configuration: debug
