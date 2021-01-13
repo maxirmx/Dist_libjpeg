@@ -40,11 +40,11 @@ Param (
 
  $dname = Get-Location
 
- $bp1 =  @("-x -",
+ $bp1 =  @("-x-",
           "-f", "makefile.vs",  
           "setup-v16") 
 
- $bp2 =  @("-e", "-x -",
+ $bp2 =  @("-e", "-x-",
           "-f", "makefile.vs",  
           "cc=cl.exe",
           "libjpeg.lib") 
