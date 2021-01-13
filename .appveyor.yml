@@ -25,7 +25,6 @@ after_build:
   - mkdir d
   - mkdir d\include
   - mkdir d\lib
-  - mkdir d\bin
   - copy libjpeg\*.lib d\lib
   - copy libjpeg\*.pdb d\lib
   - copy libjpeg\j*.h d\include
